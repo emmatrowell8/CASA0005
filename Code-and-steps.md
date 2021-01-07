@@ -3,7 +3,7 @@ Investigating the distribution of air pollution in New York City
 
 This document contains the steps and code used to carry out the analysis
 for this coursework project. The data used can be accessed
-[here](https://github.com/emmatrowell8/CASA0005/Data).
+[here](https://github.com/emmatrowell8/CASA0005/tree/master/Data).
 
 **Data preparation**
 
