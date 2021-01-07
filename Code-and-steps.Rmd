@@ -1,6 +1,6 @@
 ---
 title: "Investigating the distribution of air pollution in New York City"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -8,7 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 This document contains the steps and code used to carry out the analysis for this coursework project. 
-The data used can be accessed [here](https://github.com/emmatrowell8/GISS-Coursework/Data).
+The data used can be accessed [here](https://github.com/emmatrowell8/CASA0005/tree/master/Data).
  
 **Data preparation**
 
@@ -26,9 +26,9 @@ library(RColorBrewer)
 Next, load the data. 
 ```{r}
 nyc_community_districts <- st_read('Data/nycd_20d/nycd.shp')
-nyc_pm2.5 <- read.csv('Data/Neighbourhood_means/PM2.5_2019.csv')
-nyc_no2 <- read.csv('Data/Neighbourhood_means/NO2_2019.csv')
-nyc_so2 <- read.csv('Data/Neighbourhood_means/SO2_2019.csv')
+nyc_pm2.5 <- read.csv('Data/PM2.5_2019.csv')
+nyc_no2 <- read.csv('Data/NO2_2019.csv')
+nyc_so2 <- read.csv('Data/SO2_2019.csv')
 nyc_poverty <- read.csv('Data/poverty-data-2018.csv') 
 nyc_race <- read.csv('Data/ethnicity-2010.csv')
 nyc_income <- read.csv('Data/CCC Data Download_20210105_143328175/Median Incomes.csv')
