@@ -96,6 +96,50 @@ nyc_income_tidy <- nyc_income %>%
 nyc_income_tidy <- nyc_income_tidy[-(60:65)]
 ```
 
+To understand the data, descriptive statistics are generated.
+
+``` r
+summary(nyc_no2_tidy$Mean..ppb.)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##    9.90   15.45   17.10   17.52   19.30   28.50
+
+``` r
+summary(nyc_pm2.5_tidy$Mean..mcg.per.cubic.meter.)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##   5.600   6.350   6.700   7.044   7.250  11.500
+
+``` r
+summary(nyc_so2_tidy$Mean..ppb.)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##  0.1000  0.2000  0.3000  0.2797  0.3000  0.6000
+
+``` r
+summary(nyc_poverty$Percent_in_poverty)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##    6.30   14.10   19.60   19.65   23.45   37.10
+
+``` r
+summary(nyc_race$X..of.population.non.white)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##   14.60   43.85   71.30   67.04   91.00   99.00
+
+``` r
+summary(nyc_income_tidy$Median_Income)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##   23605   54933   67201   73420   84258  162092
+
 Initial visualisations of this data were made in QGIS. In order to do
 this, the tidied data was extracted.
 
@@ -157,7 +201,7 @@ plot(nyc_community_districts$geometry)
 plot(nyc_neighbours, coords = nyc_community_districts$geometry, add  = TRUE, col = 'red')
 ```
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 Next, calculate the spatial weights matrix.
 
@@ -414,7 +458,7 @@ tm_shape(no2_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ``` r
 tm_shape(pm2.5_local_moran_map) +
@@ -431,7 +475,7 @@ tm_shape(pm2.5_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-2.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-2.png)<!-- -->
 
 ``` r
 tm_shape(so2_local_moran_map) +
@@ -448,7 +492,7 @@ tm_shape(so2_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-3.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-3.png)<!-- -->
 
 ``` r
 tm_shape(poverty_local_moran_map) +
@@ -465,7 +509,7 @@ tm_shape(poverty_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-4.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-4.png)<!-- -->
 
 ``` r
 tm_shape(race_local_moran_map) +
@@ -482,7 +526,7 @@ tm_shape(race_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-5.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-5.png)<!-- -->
 
 ``` r
 tm_shape(income_local_moran_map) +
@@ -499,7 +543,7 @@ tm_shape(income_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-6.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-6.png)<!-- -->
 
 \_Getis Ord Gi\*\_
 
@@ -549,7 +593,7 @@ tm_shape(CD_Gi_no2) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_pm2.5) +
@@ -566,7 +610,7 @@ tm_shape(CD_Gi_pm2.5) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-2.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-2.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_so2) +
@@ -583,7 +627,7 @@ tm_shape(CD_Gi_so2) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-3.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-3.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_poverty) +
@@ -600,7 +644,7 @@ tm_shape(CD_Gi_poverty) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-4.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-4.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_race) +
@@ -617,7 +661,7 @@ tm_shape(CD_Gi_race) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-5.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-5.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_income) +
@@ -634,4 +678,4 @@ tm_shape(CD_Gi_income) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-6.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-6.png)<!-- -->
