@@ -192,7 +192,7 @@ Gi\*.
 
 *Neighbours and spatial weights matrix*
 
-The first step of the autocorrelation analysis is to define and the
+The first step of the autocorrelation analysis is to define the
 neighbour structure.
 
 ``` r
