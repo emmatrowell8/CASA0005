@@ -343,81 +343,6 @@ race_local_moran <- localmoran(CD_race_sf$X..of.population.non.white, spatial_we
 income_local_moran <- localmoran(CD_income_sf$Median_Income, spatial_weights, zero.policy = TRUE)
 ```
 
-View the results. These are explained in the results section of the
-report.
-
-``` r
-head(no2_local_moran)
-```
-
-    ##         Ii        E.Ii    Var.Ii      Z.Ii    Pr(z > 0)
-    ## 1 2.681885 -0.01724138 0.4672813  3.948517 3.931835e-05
-    ## 2 3.468870 -0.01724138 0.2257368  7.337364 1.089205e-13
-    ## 3 2.331504 -0.01724138 0.2257368  4.943501 3.836590e-07
-    ## 4 3.932475 -0.01724138 0.3062516  7.137181 4.763203e-13
-    ## 5 5.141426 -0.01724138 0.1774279 12.246910 8.725927e-35
-    ## 6 3.061125 -0.01724138 0.1774279  7.308183 1.353899e-13
-
-``` r
-head(pm2.5_local_moran)
-```
-
-    ##         Ii        E.Ii    Var.Ii      Z.Ii    Pr(z > 0)
-    ## 1 2.619164 -0.01724138 0.4417787  3.966521 3.646472e-05
-    ## 2 5.944555 -0.01724138 0.2139129 12.890170 2.556534e-38
-    ## 3 3.907596 -0.01724138 0.2139129  8.486004 1.069322e-17
-    ## 4 4.937123 -0.01724138 0.2898682  9.202116 1.754842e-20
-    ## 5 7.691536 -0.01724138 0.1683397 18.788505 4.689201e-79
-    ## 6 4.026310 -0.01724138 0.1683397  9.855295 3.251268e-23
-
-``` r
-head(so2_local_moran)
-```
-
-    ##           Ii        E.Ii    Var.Ii       Z.Ii   Pr(z > 0)
-    ## 1 -0.4619848 -0.01724138 0.4670682 -0.6507579 0.742398595
-    ## 2  0.2018001 -0.01724138 0.2256380  0.4611266 0.322353872
-    ## 3  0.1179536 -0.01724138 0.2256380  0.2846128 0.387970420
-    ## 4  0.2018001 -0.01724138 0.3061147  0.3958988 0.346089828
-    ## 5  0.9955471 -0.01724138 0.1773520  2.4049207 0.008087988
-    ## 6  0.4002369 -0.01724138 0.1773520  0.9913245 0.160763585
-
-``` r
-head(poverty_local_moran)
-```
-
-    ##           Ii        E.Ii    Var.Ii       Z.Ii   Pr(z > 0)
-    ## 1  1.0989141 -0.01724138 0.4785708  1.6134354 0.053324969
-    ## 2  1.4207632 -0.01724138 0.2309710  2.9921371 0.001385159
-    ## 3 -0.3667855 -0.01724138 0.2309710 -0.7273161 0.766483821
-    ## 4  1.4855646 -0.01724138 0.3135043  2.6839915 0.003637447
-    ## 5  1.2384033 -0.01724138 0.1814511  2.9477251 0.001600608
-    ## 6  1.1449226 -0.01724138 0.1814511  2.7282717 0.003183357
-
-``` r
-head(race_local_moran)
-```
-
-    ##            Ii        E.Ii    Var.Ii        Z.Ii    Pr(z > 0)
-    ## 1  1.10134326 -0.01724138 0.4844712  1.60707032 5.401947e-02
-    ## 2  1.56625251 -0.01724138 0.2337067  3.27552444 5.273299e-04
-    ## 3 -0.03262135 -0.01724138 0.2337067 -0.03181413 5.126899e-01
-    ## 4  1.56711105 -0.01724138 0.3172948  2.81267978 2.456528e-03
-    ## 5  1.66849543 -0.01724138 0.1835538  3.93466832 4.165583e-05
-    ## 6  1.27828991 -0.01724138 0.1835538  3.02389191 1.247728e-03
-
-``` r
-head(income_local_moran)
-```
-
-    ##          Ii        E.Ii    Var.Ii      Z.Ii    Pr(z > 0)
-    ## 1  2.091844 -0.01724138 0.4701974  3.075771 1.049796e-03
-    ## 2  2.780326 -0.01724138 0.2270888  5.870602 2.171078e-09
-    ## 3 -2.057419 -0.01724138 0.2270888 -4.281246 9.999907e-01
-    ## 4  2.591579 -0.01724138 0.3081250  4.699814 1.301995e-06
-    ## 5  1.917600 -0.01724138 0.1784671  4.580008 2.324790e-06
-    ## 6  1.458233 -0.01724138 0.1784671  3.492630 2.391443e-04
-
 The results of the Local Moran’s I analysis can be mapped. To do so, the
 results are combined with the Community Districts shapefile.
 
@@ -458,7 +383,7 @@ tm_shape(no2_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ``` r
 tm_shape(pm2.5_local_moran_map) +
@@ -475,7 +400,7 @@ tm_shape(pm2.5_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-2.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-2.png)<!-- -->
 
 ``` r
 tm_shape(so2_local_moran_map) +
@@ -492,7 +417,7 @@ tm_shape(so2_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-3.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-3.png)<!-- -->
 
 ``` r
 tm_shape(poverty_local_moran_map) +
@@ -509,7 +434,7 @@ tm_shape(poverty_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-4.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-4.png)<!-- -->
 
 ``` r
 tm_shape(race_local_moran_map) +
@@ -526,7 +451,7 @@ tm_shape(race_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-5.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-5.png)<!-- -->
 
 ``` r
 tm_shape(income_local_moran_map) +
@@ -543,7 +468,7 @@ tm_shape(income_local_moran_map) +
 
     ## Variable(s) "Local Morans I" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-16-6.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-15-6.png)<!-- -->
 
 \_Getis Ord Gi\*\_
 
@@ -593,7 +518,7 @@ tm_shape(CD_Gi_no2) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_pm2.5) +
@@ -610,7 +535,7 @@ tm_shape(CD_Gi_pm2.5) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-2.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-2.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_so2) +
@@ -627,7 +552,7 @@ tm_shape(CD_Gi_so2) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-3.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-3.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_poverty) +
@@ -644,7 +569,7 @@ tm_shape(CD_Gi_poverty) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-4.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-4.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_race) +
@@ -661,7 +586,7 @@ tm_shape(CD_Gi_race) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-5.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-5.png)<!-- -->
 
 ``` r
 tm_shape(CD_Gi_income) +
@@ -678,4 +603,4 @@ tm_shape(CD_Gi_income) +
 
     ## Variable(s) "Getis Ord Gi*" contains positive and negative values, so midpoint is set to 0. Set midpoint = NA to show the full spectrum of the color palette.
 
-![](Code-and-steps_files/figure-gfm/unnamed-chunk-18-6.png)<!-- -->
+![](Code-and-steps_files/figure-gfm/unnamed-chunk-17-6.png)<!-- -->
